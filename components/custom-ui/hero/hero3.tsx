@@ -2,6 +2,8 @@
 import React from "react";
 import FloatingLines from "@/components/floating-line/FloatingLines";
 import TrueFocus from "../true-focus/TrueFocus";
+import ChromaGrid from "../chroma/ChromaGrid";
+import ShimmerButton from "../modern-buttons/shimmerButton";
 
 const Hero3: React.FC = () => {
   return (
@@ -21,7 +23,11 @@ const Hero3: React.FC = () => {
         <div className="absolute bottom-0 bg-gradient-to-t from-[#0A0A0A] to-[#150E16]/5 w-full h-[50px]"></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <main className="py-20 lg:py-32">
+        <div className="lg:py-32 flex flex-row items-center justify-center">
+          <div className="flex-1">
+            <ChromaGrid />
+          </div>
+
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight">
               <span className="text-gray-600 dark:text-gray-400">I`m King</span>
@@ -40,8 +46,11 @@ const Hero3: React.FC = () => {
               systems, now focused on building modern web applications using
               Django and React to deliver reliable, high-quality products.
             </p>
+            <div className="mt-8">
+              <ShimmerButton />
+            </div>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );
