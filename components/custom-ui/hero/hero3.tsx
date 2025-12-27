@@ -8,14 +8,14 @@ import ShimmerButton from "../modern-buttons/shimmerButton";
 const Hero3: React.FC = () => {
   return (
     <div className="w-full relative min-h-screen">
-      <div className="absolute">
+      <div className="absolute ">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
           // Array - specify line count per wave; Number - same count for all waves
-          lineCount={[2, 2, 4]}
+          lineCount={[1, 3, 1]}
           // Array - specify line distance per wave; Number - same distance for all waves
           lineDistance={[8, 6, 4]}
-          bendRadius={5.0}
+          bendRadius={1.0}
           bendStrength={-0.5}
           interactive={true}
           parallax={true}
@@ -23,7 +23,7 @@ const Hero3: React.FC = () => {
         <div className="absolute bottom-0 bg-gradient-to-t from-[#0A0A0A] to-[#150E16]/5 w-full h-[50px]"></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:py-32 flex flex-row items-center justify-center">
+        <div className="lg:py-32 flex flex-col items-center justify-center md:flex-row">
           <div className="flex-1">
             <ChromaGrid />
           </div>

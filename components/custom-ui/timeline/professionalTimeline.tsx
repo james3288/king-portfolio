@@ -1,6 +1,12 @@
 "use client";
 
 import React, { memo, useCallback, useState } from "react";
+import ThreeDCard from "../3DCards/3dCards";
+import myPicture from "@/public/images/me.jpg";
+import dashboard from "@/public/images/dashboard.png";
+import pmbs from "@/public/images/pmbs.png";
+
+import Image, { StaticImageData } from "next/image";
 
 // Helper components to make this example self-contained.
 // In a real app, import icons from 'lucide-react' and your Badge from your UI library.
@@ -97,6 +103,7 @@ interface TimelineItemData {
   icon: IconType;
   responsibilities: string[];
   skills: string[];
+  imageUrl?: StaticImageData;
 }
 
 type ExpandMode = "multi" | "single";
@@ -111,9 +118,9 @@ interface ProfessionalTimelineProps {
 const timelineData: TimelineItemData[] = [
   {
     id: "timeline-item-1",
-    title: "Senior Frontend Developer",
-    type: "Full-time",
-    duration: "10.2022—Present",
+    title: "FlexPro Fitness Gym with face recognition System",
+    type: "Part-time",
+    duration: "2023—Present",
     icon: Code,
     responsibilities: [
       "Lead development of complex React applications with TypeScript.",
@@ -122,10 +129,11 @@ const timelineData: TimelineItemData[] = [
       "Collaborate with design and backend teams to deliver high-quality products.",
     ],
     skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+    imageUrl: dashboard,
   },
   {
     id: "timeline-item-2",
-    title: "UI Design Lead",
+    title: "Facilities Maintenance System",
     type: "Full-time",
     duration: "10.2022—Present",
     icon: Palette,
@@ -135,10 +143,11 @@ const timelineData: TimelineItemData[] = [
       "Define and establish a cohesive UI style for the company.",
     ],
     skills: ["Creativity", "UI/UX Design", "Figma"],
+    imageUrl: pmbs,
   },
   {
     id: "timeline-item-3",
-    title: "Frontend Developer",
+    title: "Supply Management System",
     type: "Full-time",
     duration: "03.2021—09.2022",
     icon: Code,
@@ -149,6 +158,7 @@ const timelineData: TimelineItemData[] = [
       "Collaborated in an agile development environment.",
     ],
     skills: ["React", "Vue.js", "JavaScript", "CSS", "HTML"],
+    imageUrl: dashboard,
   },
 ];
 
@@ -162,18 +172,29 @@ const TimelineItemContent = memo(function TimelineItemContent({
 }: TimelineItemContentProps) {
   return (
     <div className="mt-6 space-y-4">
-      {/* Responsibilities */}
-      <ul className="space-y-3">
-        {item.responsibilities.map((responsibility, idx) => (
-          <li
-            key={`${item.id}-resp-${idx}`}
-            className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400"
-          >
-            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
-            <span className="leading-relaxed">{responsibility}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="sm:flex-row flex flex-col gap-2.5">
+        <div>
+          <ThreeDCard>
+            {item.imageUrl && (
+              <Image src={item.imageUrl} alt="my-picture" width={500} />
+            )}
+          </ThreeDCard>
+        </div>
+        <div>
+          {/* Responsibilities */}
+          <ul className="space-y-3">
+            {item.responsibilities.map((responsibility, idx) => (
+              <li
+                key={`${item.id}-resp-${idx}`}
+                className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400"
+              >
+                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
+                <span className="leading-relaxed">{responsibility}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
       {/* Skills */}
       <div className="flex flex-wrap gap-2 pt-2">
@@ -306,10 +327,11 @@ export default function TimelinePage() {
   return (
     <div className="min-h-screen p-4 sm:p-8 transition-colors duration-300 my-2.5">
       <div className="max-w-3xl mx-auto">
-        <header className="flex justify-between items-center mb-8">
+        <header className="flex flex-col items-baseline mb-8">
           <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
-            Projects
+            Featured <span className="text-violet-400">Projects</span>
           </h1>
+          <p>A selection of projects that I`ve worked on.</p>
         </header>
 
         {/* Set expandMode="single" for accordion behavior */}

@@ -39,7 +39,7 @@ export default function ShimmerButton() {
             animation: "shimmer-spin 2.5s linear infinite",
           }}
         />
-        <span className="relative z-10 inline-flex items-center justify-center w-full h-full px-8 py-3 text-gray-900 dark:text-white bg-white dark:bg-gray-900 rounded-full group-hover:bg-gray-100 dark:group-hover:bg-gray-500 dark:group-hover:text-gray-950 transition-colors duration-300 gap-5">
+        <span className="relative z-10 inline-flex items-center justify-center w-full h-full px-8 py-3 text-gray-900 dark:text-white bg-white dark:bg-gray-900 rounded-full group-hover:bg-gray-100 dark:group-hover:bg-gray-300 dark:group-hover:text-gray-950 transition-colors duration-300 gap-5">
           Resume
           <ExternalLink className="h-3 w-3 lg:h-4 lg:w-4" />
         </span>

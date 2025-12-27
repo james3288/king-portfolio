@@ -66,14 +66,6 @@ const defaultTimelineData: TimelineItem[] = [
     description:
       "Transform static web designs into responsive HTML and CSS layouts, seamlessly integrating them into dynamic WordPress content management systems.",
   },
-  {
-    id: "4",
-    title: "Computer Science Degree",
-    company: "University of Technology",
-    date: "2017 - 2021",
-    description:
-      "Bachelor of Science, Magna Cum Laude with 3.8 GPA, focus on software engineering.",
-  },
 ];
 
 export default function TimelinePage3({
