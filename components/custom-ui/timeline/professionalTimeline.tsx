@@ -5,6 +5,7 @@ import ThreeDCard from "../3DCards/3dCards";
 import myPicture from "@/public/images/me.jpg";
 import dashboard from "@/public/images/dashboard.png";
 import pmbs from "@/public/images/pmbs.png";
+import sms from "@/public/images/sms.jpg";
 
 import Image, { StaticImageData } from "next/image";
 
@@ -128,7 +129,15 @@ const timelineData: TimelineItemData[] = [
       "Mentor junior developers and conduct code reviews.",
       "Collaborate with design and backend teams to deliver high-quality products.",
     ],
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+    skills: [
+      "React",
+      "Python",
+      "React.js",
+      "Sass",
+      "Django",
+      "Django REST Framework",
+      "SQLite",
+    ],
     imageUrl: dashboard,
   },
   {
@@ -142,14 +151,14 @@ const timelineData: TimelineItemData[] = [
       "Design intuitive, user-focused interfaces aligned with business goals.",
       "Define and establish a cohesive UI style for the company.",
     ],
-    skills: ["Creativity", "UI/UX Design", "Figma"],
+    skills: ["Vb.net", "Microsoft SQL Server", "Figma"],
     imageUrl: pmbs,
   },
   {
     id: "timeline-item-3",
     title: "Supply Management System",
     type: "Full-time",
-    duration: "03.2021—09.2022",
+    duration: "2016—Present",
     icon: Code,
     responsibilities: [
       "Developed responsive web applications using React and Vue.js.",
@@ -158,7 +167,7 @@ const timelineData: TimelineItemData[] = [
       "Collaborated in an agile development environment.",
     ],
     skills: ["React", "Vue.js", "JavaScript", "CSS", "HTML"],
-    imageUrl: dashboard,
+    imageUrl: sms,
   },
 ];
 

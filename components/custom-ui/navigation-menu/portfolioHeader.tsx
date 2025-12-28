@@ -27,9 +27,9 @@ const PortfolioHeader = () => {
   }, []);
 
   const navLinks = [
-    { href: "#home", text: "Home" },
     { href: "#about", text: "About" },
-    { href: "#services", text: "Services" },
+    { href: "#projects", text: "Projects" },
+    { href: "#experience", text: "Experience" },
     { href: "#blog", text: "Blog" },
     { href: "#contact", text: "Contact" },
   ];

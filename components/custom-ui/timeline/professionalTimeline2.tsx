@@ -44,7 +44,7 @@ const Badge = ({
 const defaultTimelineData: TimelineItem[] = [
   {
     id: "1",
-    title: "Freelance Prorammer",
+    title: "Freelance Programmer",
     company: "",
     date: "2023 - Present",
     description:
@@ -52,6 +52,14 @@ const defaultTimelineData: TimelineItem[] = [
   },
   {
     id: "2",
+    title: "Training (Python Programming Essentials)",
+    company: "Inventive Media",
+    date: "24-27.11.2023",
+    description:
+      "Developed a fitness gym system featuring facial recognition and subscription management, enabling users to register memberships and assign trainers with ease.",
+  },
+  {
+    id: "3",
     title: "Software Developer",
     company: "Adfil Corporation",
     date: "2016 - Present",
@@ -59,10 +67,18 @@ const defaultTimelineData: TimelineItem[] = [
       "Collaborating with stakeholders to gather and analyze requirements for software projects, understanding the needs and objectives of end users. Create clean, efficient, and maintainable code according to design specifications, using programming languages such as Python, JavaScript, visual basic.net and SQL server",
   },
   {
-    id: "3",
+    id: "4",
     title: "Frontend Web Developer",
     company: "Proweaver",
     date: "2013 - 2014",
+    description:
+      "Transform static web designs into responsive HTML and CSS layouts, seamlessly integrating them into dynamic WordPress content management systems.",
+  },
+  {
+    id: "5",
+    title: "Education (Bachelor of Science in Information Technology)",
+    company: "Father Saturnino Urios University",
+    date: "2006 - 2012",
     description:
       "Transform static web designs into responsive HTML and CSS layouts, seamlessly integrating them into dynamic WordPress content management systems.",
   },
@@ -75,9 +91,11 @@ export default function TimelinePage3({
   return (
     <div className="min-h-screen p-4 sm:p-8 transition-colors duration-300">
       <div className="max-w-3xl mx-auto">
-        <header className="flex justify-between items-center mb-8">
+        <header className="flex flex-col items-base mb-8">
           <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
-            Professional Experience
+            Professional <span className="text-violet-400">Experience</span> /
+            <span> Education</span> /{" "}
+            <span className="text-violet-400"> Training </span>
           </h1>
         </header>
 
