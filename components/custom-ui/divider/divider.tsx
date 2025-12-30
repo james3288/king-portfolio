@@ -10,7 +10,7 @@ interface DividerProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: React.ReactNode;
 }
-
+``
 const Divider = ({
   orientation = "horizontal",
   decorative = true,

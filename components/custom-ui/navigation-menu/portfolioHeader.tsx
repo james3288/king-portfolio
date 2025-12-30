@@ -27,11 +27,11 @@ const PortfolioHeader = () => {
   }, []);
 
   const navLinks = [
-    { href: "#about", text: "About" },
-    { href: "#projects", text: "Projects" },
-    { href: "#experience", text: "Experience" },
-    { href: "#blog", text: "Blog" },
-    { href: "#contact", text: "Contact" },
+    { href: "#about", text: "ABOUT" },
+    { href: "#projects", text: "PROJECTS" },
+    { href: "#experience", text: "EXPERIENCES" },
+    { href: "#tech-stack", text: "TECH STACK" },
+    { href: "#contact", text: "CONTACT" },
   ];
 
   return (
@@ -48,8 +48,8 @@ const PortfolioHeader = () => {
                   K
                 </span>
               </div>
-              <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-gray-100">
-                King James
+              <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-violet-400">
+                JAMES
               </span>
             </a>
           </div>

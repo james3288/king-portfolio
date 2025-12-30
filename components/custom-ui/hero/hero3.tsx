@@ -5,11 +5,12 @@ import TrueFocus from "../true-focus/TrueFocus";
 import ChromaGrid from "../chroma/ChromaGrid";
 import ShimmerButton from "../modern-buttons/shimmerButton";
 import ReactIcon from "@/components/icons/react";
+import FancyButton from "../modern-buttons/fancyButton/fancyButton";
 
 const Hero3: React.FC = () => {
   return (
     <div className="w-full relative min-h-screen">
-      <div className="absolute ">
+      <div className="absolute">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
           // Array - specify line count per wave; Number - same count for all waves
@@ -45,18 +46,12 @@ const Hero3: React.FC = () => {
             <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               I’m a software developer with a strong foundation in enterprise
               systems, now focused on building modern web applications using
-              Django and React to deliver reliable, high-quality products. I was
-              born in 2001 in Jakarta, Indonesia. When the pandemic hit 5 years
-              ago, my university was closed for a few weeks, and I started to
-              learn web development, especially front-end development, out of
-              boredom. As part of my learning journey, I started writing blog
-              articles as a way to solidify my knowledge. When I posted them
-              here as documentation, I discovered that many people found them
-              valuable. Hopefully, it can help you too.
+              Django and React to deliver reliable, high-quality products.
             </p>
 
-            <div className="mt-8">
-              <ShimmerButton />
+            <div className="mt-8 flex items-center justify-center space-x-4">
+              {/* <ShimmerButton /> */}
+              <FancyButton label="Open for hire" />
             </div>
           </div>
         </div>

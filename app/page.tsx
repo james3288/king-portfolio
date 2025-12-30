@@ -4,17 +4,21 @@ import ProfessionalTimeline from "@/components/custom-ui/timeline/professionalTi
 import TimelinePage3 from "@/components/custom-ui/timeline/professionalTimeline2";
 import Divider from "@/components/custom-ui/divider/divider";
 import OrbitingSkills from "@/components/custom-ui/orbiting/orbiting";
+import Footer2 from "@/components/custom-ui/footer/footer-minimal";
+import "../public/css/cyberpattern.css";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <PortfolioHeader />
       <Hero3 />
 
       <ProfessionalTimeline />
-      <Divider variant="dashed" />
+
       <TimelinePage3 />
+
       <OrbitingSkills />
+      <Footer2 />
     </div>
   );
 }

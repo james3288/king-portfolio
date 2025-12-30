@@ -56,7 +56,7 @@ const defaultTimelineData: TimelineItem[] = [
     company: "Inventive Media",
     date: "24-27.11.2023",
     description:
-      "Developed a fitness gym system featuring facial recognition and subscription management, enabling users to register memberships and assign trainers with ease.",
+      "Successfully completed Python Essentials training, progressing from core fundamentals to advanced topics, with daily practical project implementation using Django.",
   },
   {
     id: "3",

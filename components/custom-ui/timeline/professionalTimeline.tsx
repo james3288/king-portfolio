@@ -331,10 +331,10 @@ export function ProfessionalTimeline({
   );
 }
 
-// --- APP ENTRY POINT ---
+// --- APP ENTRY POINT ---`
 export default function TimelinePage() {
   return (
-    <div className="min-h-screen p-4 sm:p-8 transition-colors duration-300 my-2.5">
+    <div className="min-h-screen p-4 sm:p-8 transition-colors duration-300 my-2.5 relative">
       <div className="max-w-3xl mx-auto">
         <header className="flex flex-col items-baseline mb-8">
           <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
@@ -346,6 +346,7 @@ export default function TimelinePage() {
         {/* Set expandMode="single" for accordion behavior */}
         <ProfessionalTimeline data={timelineData} expandMode="multi" />
       </div>
+      {/* <div className="absolute bottom-0 bg-gradient-to-t from-black to-transparent w-full h-16"></div> */}
     </div>
   );
 }
