@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
 
+import Link from "next/link";
+import LoadingIndicator from "@/components/ui/loading-indicator";
+
 const PortfolioHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,8 +30,8 @@ const PortfolioHeader = () => {
   }, []);
 
   const navLinks = [
-    { href: "#about", text: "ABOUT" },
-    { href: "#projects", text: "PROJECTS" },
+    { href: "/about", text: "ABOUT" },
+    { href: "/", text: "PROJECTS" },
     { href: "#experience", text: "EXPERIENCES" },
     { href: "#tech-stack", text: "TECH STACK" },
     { href: "#contact", text: "CONTACT" },
@@ -42,45 +45,39 @@ const PortfolioHeader = () => {
         <div className="flex h-14 sm:h-16 lg:h-20 items-center justify-between">
           {/* Logo and Name */}
           <div className="flex items-center">
-            <a href="#" className="flex items-center space-x-2 group">
+            <Link href="/" className="flex items-center space-x-2 group">
               <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-gray-900 dark:bg-gray-50 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
                 <span className="text-white dark:text-gray-900 font-bold text-base sm:text-lg lg:text-xl">
                   K
                 </span>
               </div>
               <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-violet-400">
-                JAMES
+                James <span className="text-white">Solution</span>
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.text}
                 href={link.href}
                 className="text-sm lg:text-base font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
               >
                 {link.text}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-gray-100 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+                <LoadingIndicator />
+              </Link>
             ))}
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
-            {/* <a
-              href="#"
-              className="flex items-center space-x-1.5 lg:space-x-2 px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm font-medium text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-all hover:shadow-md"
-            >
-              <span>Resume</span>
-              <ExternalLink className="h-3 w-3 lg:h-4 lg:w-4" />
-            </a> */}
+          {/* <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
             <button className="px-4 lg:px-6 py-1.5 lg:py-2 text-xs lg:text-sm font-medium bg-gray-900 text-white dark:bg-gray-50 dark:text-gray-900 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-all shadow-sm hover:shadow-lg transform hover:scale-105">
               Github
             </button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button

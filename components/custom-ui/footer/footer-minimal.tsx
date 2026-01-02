@@ -1,4 +1,6 @@
 "use client";
+
+import Link from "next/link";
 import React from "react";
 
 function Footer2() {
@@ -130,16 +132,16 @@ function Footer2() {
     <footer className="py-10 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden ">
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         <div className="mb-6 flex items-center justify-center">
-          <a href="#" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center space-x-2 group">
             <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-gray-900 dark:bg-gray-50 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
               <span className="text-white dark:text-gray-900 font-bold text-base sm:text-lg lg:text-xl">
                 K
               </span>
             </div>
-            <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-gray-100">
-              James
+            <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-violet-400">
+              James <span className="text-white">Solution</span>
             </span>
-          </a>
+          </Link>
         </div>
 
         <nav className="mb-6 w-full">
@@ -173,7 +175,7 @@ function Footer2() {
         </div>
 
         <p className="text-center text-xs text-gray-500 dark:text-gray-500 mt-4">
-          &copy; {new Date().getFullYear()} seraui. All rights reserved.
+          &copy; {new Date().getFullYear()} King James Uayan, Philippines
         </p>
       </div>
     </footer>

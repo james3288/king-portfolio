@@ -43,7 +43,9 @@ const Hero3: React.FC = () => {
               pauseBetweenAnimations={1}
             />
 
-            <p className="mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p
+              className={`mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto`}
+            >
               I’m a software developer with a strong foundation in enterprise
               systems, now focused on building modern web applications using
               Django and React to deliver reliable, high-quality products.

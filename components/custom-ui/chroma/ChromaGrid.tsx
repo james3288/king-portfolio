@@ -46,12 +46,12 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
   const demo: ChromaItem[] = [
     {
       image: `${myPicture.src}`,
-      title: "Alex Rivera",
-      subtitle: "Full Stack Developer",
-      handle: "@alexrivera",
+      title: "King James Uayan",
+      subtitle: "Software Developer",
+      handle: "@james3288",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg, #4F46E5, #000)",
-      url: "https://github.com/",
+      url: "https://github.com/james3288",
     },
   ];
   const data = items?.length ? items : demo;
@@ -141,12 +141,6 @@ export const ChromaGrid: React.FC<ChromaGridProps> = ({
           <div className="chroma-img-wrapper">
             <img src={c.image} alt={c.title} loading="lazy" />
           </div>
-          {/* <footer className="chroma-info">
-            <h3 className="name">{c.title}</h3>
-            {c.handle && <span className="handle">{c.handle}</span>}
-            <p className="role">{c.subtitle}</p>
-            {c.location && <span className="location">{c.location}</span>}
-          </footer> */}
         </article>
       ))}
       <div className="chroma-overlay" />
