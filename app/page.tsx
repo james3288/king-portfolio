@@ -10,12 +10,9 @@ export default function Home() {
   return (
     <div className="">
       <Hero3 />
-
-      <ProfessionalTimeline />
-
-      <TimelinePage3 />
-
       <OrbitingSkills />
+      <ProfessionalTimeline />
+      <TimelinePage3 />
     </div>
   );
 }

@@ -10,7 +10,7 @@ import FancyButton from "../modern-buttons/fancyButton/fancyButton";
 const Hero3: React.FC = () => {
   return (
     <div className="w-full relative min-h-screen">
-      <div className="absolute">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
           // Array - specify line count per wave; Number - same count for all waves

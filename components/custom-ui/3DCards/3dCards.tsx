@@ -133,7 +133,7 @@ function ThreeDCard({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={cardStyle}
-        className="relative bg-gray-800 rounded-2xl overflow-hidden"
+        className="relative bg-gray-800 rounded-[10px] overflow-hidden"
         role="img"
         tabIndex={0}
         onFocus={handleMouseEnter}
