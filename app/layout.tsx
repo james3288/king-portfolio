@@ -5,16 +5,6 @@ import { Roboto } from "next/font/google";
 import PortfolioHeader from "@/components/custom-ui/navigation-menu/portfolioHeader";
 import Footer2 from "@/components/custom-ui/footer/footer-minimal";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const roboto = Roboto({
   weight: "400",
   subsets: ["latin"],
