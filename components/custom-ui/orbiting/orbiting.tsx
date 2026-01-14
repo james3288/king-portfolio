@@ -412,7 +412,10 @@ export default function OrbitingSkills() {
   ];
 
   return (
-    <main className="w-full flex flex-col items-center justify-center overflow-hidden py-3 md:flex-row">
+    <section
+      className="w-full flex flex-col items-center justify-center overflow-hidden py-3 md:flex-row"
+      id="tech-stack"
+    >
       {/* Background pattern */}
       <header className="flex flex-col items-baseline mb-8">
         <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
@@ -481,6 +484,6 @@ export default function OrbitingSkills() {
           );
         })}
       </div>
-    </main>
+    </section>
   );
 }

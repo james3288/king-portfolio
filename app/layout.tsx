@@ -4,6 +4,7 @@ import "./globals.css";
 import { Roboto } from "next/font/google";
 import PortfolioHeader from "@/components/custom-ui/navigation-menu/portfolioHeader";
 import Footer2 from "@/components/custom-ui/footer/footer-minimal";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,9 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased dark`}>
-        <PortfolioHeader />
-        {children}
-        <Footer2 />
+        <SmoothScrollProvider>
+          <PortfolioHeader />
+          {children}
+          <Footer2 />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

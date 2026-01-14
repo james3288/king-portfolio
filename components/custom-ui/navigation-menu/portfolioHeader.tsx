@@ -4,10 +4,14 @@ import { Menu, X, ExternalLink } from "lucide-react";
 
 import Link from "next/link";
 import LoadingIndicator from "@/components/ui/loading-indicator";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
+import { useLenis } from "@/components/LenisContext";
 
 const PortfolioHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const lenis = useLenis();
+  const { scrollTo } = useSmoothScroll();
 
   // Handle scroll effect
   useEffect(() => {
@@ -29,12 +33,26 @@ const PortfolioHeader = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleClick = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (!target || !lenis) return;
+
+    lenis.scrollTo(target, {
+      offset: -80,
+      duration: 1.2,
+    });
+  };
+
   const navLinks = [
-    { href: "/about", text: "ABOUT" },
-    { href: "/", text: "PROJECTS" },
-    { href: "#experience", text: "EXPERIENCES" },
-    { href: "#tech-stack", text: "TECH STACK" },
-    { href: "#contact", text: "CONTACT" },
+    { href: "#about", text: "ABOUT", id: "about" },
+    { href: "#experiences", text: "EXPERIENCES", id: "experiences" },
+    { href: "#tech-stack", text: "TECH STACK", id: "tech-stack" },
+    {
+      href: "#featured-project",
+      text: "FEATURED PROJECT",
+      id: "featured-project",
+    },
   ];
 
   return (
@@ -65,6 +83,7 @@ const PortfolioHeader = () => {
               <Link
                 key={link.text}
                 href={link.href}
+                onClick={(e) => handleClick(e, link.id)}
                 className="text-sm lg:text-base font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
               >
                 {link.text}

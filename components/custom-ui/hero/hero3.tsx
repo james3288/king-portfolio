@@ -9,7 +9,7 @@ import FancyButton from "../modern-buttons/fancyButton/fancyButton";
 
 const Hero3: React.FC = () => {
   return (
-    <div className="w-full relative min-h-screen">
+    <section className="w-full relative min-h-screen" id="about">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
@@ -58,7 +58,7 @@ const Hero3: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
