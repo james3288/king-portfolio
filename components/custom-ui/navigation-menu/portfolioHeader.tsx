@@ -39,7 +39,9 @@ const PortfolioHeader = () => {
 
   return (
     <header
-      className={`w-full transition-all duration-300 border-b border-gray-200 dark:border-gray-800`}
+      className={`w-full transition-all duration-100 border-b border-gray-200 dark:border-gray-800 ${
+        isScrolled && "fixed z-50 bg-[#0A0A0A]"
+      }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl">
         <div className="flex h-14 sm:h-16 lg:h-20 items-center justify-between">
