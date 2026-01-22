@@ -6,11 +6,20 @@ import ChromaGrid from "../chroma/ChromaGrid";
 import ShimmerButton from "../modern-buttons/shimmerButton";
 import ReactIcon from "@/components/icons/react";
 import FancyButton from "../modern-buttons/fancyButton/fancyButton";
+import {
+  FloatingVerifyBadge,
+  VerifyBadge,
+  VerifyIcon,
+} from "../verify-budge/VerifyBadge";
+import Link from "next/link";
 
 const Hero3: React.FC = () => {
   return (
-    <div className="w-full relative min-h-screen">
-      <div className="absolute">
+    <section
+      className="w-full relative min-h-screen py-[50px] md:py-[10px] lg:py-0"
+      id="about"
+    >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <FloatingLines
           enabledWaves={["top", "middle", "bottom"]}
           // Array - specify line count per wave; Number - same count for all waves
@@ -24,7 +33,7 @@ const Hero3: React.FC = () => {
         />
         <div className="absolute bottom-0 bg-gradient-to-t from-[#0A0A0A] to-[#150E16]/5 w-full h-[50px]"></div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="lg:py-32 flex flex-col items-center justify-center md:flex-row">
           <div className="flex-1">
             <ChromaGrid />
@@ -51,6 +60,19 @@ const Hero3: React.FC = () => {
               Django and React to deliver reliable, high-quality products.
             </p>
 
+            <div className="flex justify-center gap-2.5 my-5">
+              <Link href={"https://wakatime.com/@james3288"}>
+                <VerifyBadge type="basic" size="md" />
+              </Link>
+              <Link href={"https://github.com/james3288"} target="blank">
+                <VerifyBadge type="premium" size="md" />
+              </Link>
+              <Link href={"https://app.daily.dev/james3288"}>
+                {" "}
+                <VerifyBadge type="gold" size="md" />
+              </Link>
+            </div>
+
             <div className="mt-8 flex items-center justify-center space-x-4">
               {/* <ShimmerButton /> */}
               <FancyButton label="Open for hire" />
@@ -58,7 +80,7 @@ const Hero3: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

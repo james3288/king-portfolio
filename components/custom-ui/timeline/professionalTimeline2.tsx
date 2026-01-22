@@ -89,7 +89,10 @@ export default function TimelinePage3({
   className = "",
 }: TimelineProps) {
   return (
-    <div className="min-h-screen p-4 sm:p-8 transition-colors duration-300">
+    <section
+      className="min-h-screen p-4 sm:p-8 transition-colors duration-300"
+      id="experiences"
+    >
       <div className="max-w-3xl mx-auto">
         <header className="flex flex-col items-base mb-8">
           <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
@@ -134,6 +137,6 @@ export default function TimelinePage3({
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -8,14 +8,11 @@ import "../public/css/cyberpattern.css";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Hero3 />
-
-      <ProfessionalTimeline />
-
-      <TimelinePage3 />
-
       <OrbitingSkills />
+      <ProfessionalTimeline />
+      <TimelinePage3 />
     </div>
   );
 }

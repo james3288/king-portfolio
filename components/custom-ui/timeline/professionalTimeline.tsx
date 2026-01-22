@@ -6,8 +6,10 @@ import myPicture from "@/public/images/me.jpg";
 import dashboard from "@/public/images/dashboard.png";
 import pmbs from "@/public/images/pmbs.png";
 import sms from "@/public/images/sms.jpg";
+import fms from "@/public/images/fms.png";
 
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 // Helper components to make this example self-contained.
 // In a real app, import icons from 'lucide-react' and your Badge from your UI library.
@@ -105,6 +107,7 @@ interface TimelineItemData {
   responsibilities: string[];
   skills: string[];
   imageUrl?: StaticImageData;
+  link?: string | "";
 }
 
 type ExpandMode = "multi" | "single";
@@ -139,6 +142,7 @@ const timelineData: TimelineItemData[] = [
       "SQLite",
     ],
     imageUrl: dashboard,
+    link: "https://github.com/james3288/flex-pro-frontend",
   },
   {
     id: "timeline-item-2",
@@ -147,12 +151,13 @@ const timelineData: TimelineItemData[] = [
     duration: "10.2022—Present",
     icon: Palette,
     responsibilities: [
-      "Ensure UI/UX consistency and high-quality standards.",
-      "Design intuitive, user-focused interfaces aligned with business goals.",
+      "Ensure UI/UX consistency and high-quality standards using React,Typescript and bootstrap.",
+      "Transitioning legacy codebase to modern React practices and optimize performance.",
       "Define and establish a cohesive UI style for the company.",
     ],
-    skills: ["Vb.net", "Microsoft SQL Server", "Figma"],
-    imageUrl: pmbs,
+    skills: ["React", "TypeScript", "Bootstrap", "SQL Server"],
+    imageUrl: fms,
+    link: "https://github.com/james3288/frontend-fms",
   },
   {
     id: "timeline-item-3",
@@ -161,13 +166,13 @@ const timelineData: TimelineItemData[] = [
     duration: "2016—Present",
     icon: Code,
     responsibilities: [
-      "Developed responsive web applications using React and Vue.js.",
-      "Implemented pixel-perfect designs from Figma mockups.",
-      "Optimized application performance and user experience.",
-      "Collaborated in an agile development environment.",
+      "Developed windows applications using Vb.net framework 3.5 and UI design in Photoshop.",
+      "Implemented and combined with Microsoft SQL Server for robust data management.",
+      "Optimized application performance and user experience through background worker.",
     ],
-    skills: ["React", "Vue.js", "JavaScript", "CSS", "HTML"],
+    skills: ["Vb.net", "Microsoft SQL Server", "Photoshop"],
     imageUrl: sms,
+    link: "https://github.com/james3288/SMS",
   },
 ];
 
@@ -185,7 +190,9 @@ const TimelineItemContent = memo(function TimelineItemContent({
         <div>
           <ThreeDCard>
             {item.imageUrl && (
-              <Image src={item.imageUrl} alt="my-picture" width={500} />
+              <Link href={item.link ?? ""} target="new_blank">
+                <Image src={item.imageUrl} alt="my-picture" width={500} />
+              </Link>
             )}
           </ThreeDCard>
         </div>
@@ -334,7 +341,10 @@ export function ProfessionalTimeline({
 // --- APP ENTRY POINT ---`
 export default function TimelinePage() {
   return (
-    <div className="min-h-screen p-4 sm:p-10 transition-colors duration-300 my-2.5 relative pt-20">
+    <section
+      className="min-h-screen p-4 sm:p-10 transition-colors duration-300 my-2.5 relative pt-20"
+      id="featured-project"
+    >
       <div className="max-w-3xl mx-auto">
         <header className="flex flex-col items-baseline mb-8">
           <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">
@@ -347,6 +357,6 @@ export default function TimelinePage() {
         <ProfessionalTimeline data={timelineData} expandMode="multi" />
       </div>
       {/* <div className="absolute bottom-0 bg-gradient-to-t from-black to-transparent w-full h-16"></div> */}
-    </div>
+    </section>
   );
 }

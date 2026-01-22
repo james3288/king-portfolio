@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
+import { useLenis } from "@/components/SmoothScrollProvider";
 
 import Link from "next/link";
 import LoadingIndicator from "@/components/ui/loading-indicator";
@@ -8,6 +9,8 @@ import LoadingIndicator from "@/components/ui/loading-indicator";
 const PortfolioHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const { scrollTo } = useLenis();
 
   // Handle scroll effect
   useEffect(() => {
@@ -30,16 +33,21 @@ const PortfolioHeader = () => {
   }, []);
 
   const navLinks = [
-    { href: "/about", text: "ABOUT" },
-    { href: "/", text: "PROJECTS" },
-    { href: "#experience", text: "EXPERIENCES" },
-    { href: "#tech-stack", text: "TECH STACK" },
-    { href: "#contact", text: "CONTACT" },
+    { href: "#about", text: "ABOUT", id: "about" },
+    { href: "#experiences", text: "EXPERIENCES", id: "experiences" },
+    { href: "#tech-stack", text: "TECH STACK", id: "tech-stack" },
+    {
+      href: "#featured-project",
+      text: "FEATURED PROJECT",
+      id: "featured-project",
+    },
   ];
 
   return (
     <header
-      className={`w-full transition-all duration-300 border-b border-gray-200 dark:border-gray-800`}
+      className={`w-full transition-all duration-100 border-b border-gray-200 dark:border-gray-800 ${
+        isScrolled && "fixed z-50 bg-[#0A0A0A]"
+      }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl">
         <div className="flex h-14 sm:h-16 lg:h-20 items-center justify-between">
@@ -48,7 +56,7 @@ const PortfolioHeader = () => {
             <Link href="/" className="flex items-center space-x-2 group">
               <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-gray-900 dark:bg-gray-50 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
                 <span className="text-white dark:text-gray-900 font-bold text-base sm:text-lg lg:text-xl">
-                  K
+                  ?
                 </span>
               </div>
               <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-violet-400">
@@ -63,6 +71,7 @@ const PortfolioHeader = () => {
               <Link
                 key={link.text}
                 href={link.href}
+                onClick={() => scrollTo(`#${link.id}`, { offset: -80 })}
                 className="text-sm lg:text-base font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
               >
                 {link.text}
@@ -102,14 +111,14 @@ const PortfolioHeader = () => {
           <div className="py-4 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.text}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className="px-3 py-2.5 text-sm sm:text-base font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   {link.text}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-700 flex flex-col space-y-2">
                 <a
