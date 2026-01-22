@@ -8,7 +8,7 @@ import "../public/css/cyberpattern.css";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Hero3 />
       <OrbitingSkills />
       <ProfessionalTimeline />

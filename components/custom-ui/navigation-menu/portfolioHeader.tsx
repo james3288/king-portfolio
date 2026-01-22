@@ -1,17 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
+import { useLenis } from "@/components/SmoothScrollProvider";
 
 import Link from "next/link";
 import LoadingIndicator from "@/components/ui/loading-indicator";
-import useSmoothScroll from "@/hooks/useSmoothScroll";
-import { useLenis } from "@/components/LenisContext";
 
 const PortfolioHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const lenis = useLenis();
-  const { scrollTo } = useSmoothScroll();
+
+  const { scrollTo } = useLenis();
 
   // Handle scroll effect
   useEffect(() => {
@@ -32,17 +31,6 @@ const PortfolioHeader = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const handleClick = (e: React.MouseEvent, id: string) => {
-    e.preventDefault();
-    const target = document.getElementById(id);
-    if (!target || !lenis) return;
-
-    lenis.scrollTo(target, {
-      offset: -80,
-      duration: 1.2,
-    });
-  };
 
   const navLinks = [
     { href: "#about", text: "ABOUT", id: "about" },
@@ -83,7 +71,7 @@ const PortfolioHeader = () => {
               <Link
                 key={link.text}
                 href={link.href}
-                onClick={(e) => handleClick(e, link.id)}
+                onClick={() => scrollTo(`#${link.id}`, { offset: -80 })}
                 className="text-sm lg:text-base font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
               >
                 {link.text}
@@ -123,14 +111,14 @@ const PortfolioHeader = () => {
           <div className="py-4 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.text}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className="px-3 py-2.5 text-sm sm:text-base font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   {link.text}
-                </a>
+                </Link>
               ))}
               <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-700 flex flex-col space-y-2">
                 <a

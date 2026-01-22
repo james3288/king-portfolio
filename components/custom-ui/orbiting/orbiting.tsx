@@ -375,7 +375,7 @@ const GlowingOrbitPath = memo(
         />
       </div>
     );
-  }
+  },
 );
 GlowingOrbitPath.displayName = "GlowingOrbitPath";
 
