@@ -62,14 +62,14 @@ const Hero3: React.FC = () => {
 
             <div className="flex justify-center gap-2.5 my-5">
               <Link href={"https://wakatime.com/@james3288"}>
-                <VerifyBadge type="basic" size="md" />
+                <VerifyBadge type="wakatime" size="md" />
               </Link>
               <Link href={"https://github.com/james3288"} target="blank">
-                <VerifyBadge type="premium" size="md" />
+                <VerifyBadge type="github" size="md" />
               </Link>
               <Link href={"https://app.daily.dev/james3288"}>
                 {" "}
-                <VerifyBadge type="gold" size="md" />
+                <VerifyBadge type="dailyDev" size="md" />
               </Link>
             </div>
 

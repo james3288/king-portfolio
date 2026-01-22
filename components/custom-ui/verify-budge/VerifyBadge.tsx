@@ -224,7 +224,13 @@ const DailyDevIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
 );
 
 // Verification Badge Types
-type VerifyBadgeType = "basic" | "gold" | "premium";
+type VerifyBadgeType =
+  | "basic"
+  | "gold"
+  | "premium"
+  | "github"
+  | "wakatime"
+  | "dailyDev";
 
 interface VerifyBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   type: VerifyBadgeType;
@@ -243,6 +249,36 @@ const badgeConfig = {
       border: "border-blue-200/50 dark:border-blue-600/30",
       text: "text-blue-700 dark:text-blue-300",
       glow: "shadow-blue-500/20",
+    },
+  },
+  wakatime: {
+    icon: WakaTimeIcon,
+    label: "Wakatime",
+    colors: {
+      bg: "bg-blue-50/80 dark:bg-[#150E16]",
+      border: "border-blue-200/50 dark:border-blue-600/30",
+      text: "text-blue-700 dark:text-blue-300",
+      glow: "shadow-[blue]-300/20",
+    },
+  },
+  github: {
+    icon: GithubIcon,
+    label: "Github",
+    colors: {
+      bg: "bg-blue-50/80 dark:bg-[#150E16]",
+      border: "border-blue-200/50 dark:border-blue-600/30",
+      text: "text-blue-700 dark:text-blue-300",
+      glow: "shadow-blue-300/20",
+    },
+  },
+  dailyDev: {
+    icon: DailyDevIcon,
+    label: "Daily.dev",
+    colors: {
+      bg: "bg-blue-50/80 dark:bg-[#150E16]",
+      border: "border-blue-200/50 dark:border-blue-600/30",
+      text: "text-blue-700 dark:text-blue-300",
+      glow: "shadow-blue-300/20",
     },
   },
   gold: {
