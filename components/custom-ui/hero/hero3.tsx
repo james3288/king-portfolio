@@ -3,14 +3,8 @@ import React from "react";
 import FloatingLines from "@/components/floating-line/FloatingLines";
 import TrueFocus from "../true-focus/TrueFocus";
 import ChromaGrid from "../chroma/ChromaGrid";
-import ShimmerButton from "../modern-buttons/shimmerButton";
-import ReactIcon from "@/components/icons/react";
 import FancyButton from "../modern-buttons/fancyButton/fancyButton";
-import {
-  FloatingVerifyBadge,
-  VerifyBadge,
-  VerifyIcon,
-} from "../verify-budge/VerifyBadge";
+import { VerifyBadge } from "../verify-budge/VerifyBadge";
 import Link from "next/link";
 
 const Hero3: React.FC = () => {

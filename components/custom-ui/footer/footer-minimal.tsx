@@ -1,16 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
 
 function Footer2() {
   const navLinks = [
-    { name: "Features", href: "#" },
-    { name: "Solution", href: "#" },
-    { name: "Customers", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "Help", href: "#" },
-    { name: "About", href: "#" },
+    { href: "#about", text: "ABOUT", id: "about" },
+    { href: "#experiences", text: "EXPERIENCES", id: "experiences" },
+    { href: "#tech-stack", text: "TECH STACK", id: "tech-stack" },
+    {
+      href: "#featured-project",
+      text: "FEATURED PROJECT",
+      id: "featured-project",
+    },
   ];
 
   const socialIcons = [
@@ -135,11 +136,11 @@ function Footer2() {
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-gray-900 dark:bg-gray-50 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
               <span className="text-white dark:text-gray-900 font-bold text-base sm:text-lg lg:text-xl">
-                K
+                Kj
               </span>
             </div>
             <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-violet-400">
-              James <span className="text-white">Solution</span>
+              Dev <span className="text-white"> Solution</span>
             </span>
           </Link>
         </div>
@@ -147,19 +148,19 @@ function Footer2() {
         <nav className="mb-6 w-full">
           <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-base font-medium">
             {navLinks.map((link) => (
-              <li key={link.name}>
+              <li key={link.id}>
                 <a
                   href={link.href}
                   className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 relative after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-gray-900 dark:after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                 >
-                  {link.name}
+                  {link.text}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
 
-        <div className="my-6 flex flex-wrap justify-center gap-4 text-sm">
+        {/* <div className="my-6 flex flex-wrap justify-center gap-4 text-sm">
           {socialIcons.map((icon) => (
             <a
               key={icon.name}
@@ -172,7 +173,7 @@ function Footer2() {
               {icon.svg}
             </a>
           ))}
-        </div>
+        </div> */}
 
         <p className="text-center text-xs text-gray-500 dark:text-gray-500 mt-4">
           &copy; {new Date().getFullYear()} King James Uayan, Philippines

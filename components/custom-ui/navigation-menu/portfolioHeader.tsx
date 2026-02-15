@@ -5,7 +5,6 @@ import { useLenis } from "@/components/SmoothScrollProvider";
 
 import Link from "next/link";
 import LoadingIndicator from "@/components/ui/loading-indicator";
-import { useRouter } from "next/router";
 
 const PortfolioHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,13 +80,6 @@ const PortfolioHeader = () => {
               </Link>
             ))}
           </nav>
-
-          {/* Desktop CTA Buttons */}
-          {/* <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
-            <button className="px-4 lg:px-6 py-1.5 lg:py-2 text-xs lg:text-sm font-medium bg-gray-900 text-white dark:bg-gray-50 dark:text-gray-900 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-all shadow-sm hover:shadow-lg transform hover:scale-105">
-              Github
-            </button>
-          </div> */}
 
           {/* Mobile Menu Button */}
           <button
