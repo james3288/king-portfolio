@@ -7,6 +7,7 @@ import dashboard from "@/public/images/dashboard.png";
 import pmbs from "@/public/images/pmbs.png";
 import sms from "@/public/images/sms.jpg";
 import fms from "@/public/images/fms.png";
+import axleBot from "@/public/images/axle-bot.png";
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
@@ -127,10 +128,9 @@ const timelineData: TimelineItemData[] = [
     duration: "2023—Present",
     icon: Code,
     responsibilities: [
-      "Lead development of complex React applications with TypeScript.",
-      "Architect scalable frontend solutions using Next.js and modern tooling.",
-      "Mentor junior developers and conduct code reviews.",
-      "Collaborate with design and backend teams to deliver high-quality products.",
+      "Designed and developed a complex React application for biometric authentication utilizing facial recognition technology.",
+      "Developed RESTful APIs using Django Rest Framework to support secure user authentication and authorization.",
+      "Configured and executed the application locally through shell scripting for development and testing purposes.",
     ],
     skills: [
       "React",
@@ -146,17 +146,18 @@ const timelineData: TimelineItemData[] = [
   },
   {
     id: "timeline-item-2",
-    title: "Facilities Maintenance System",
+    title: "Axle IQ Binary Option Bot",
     type: "Full-time",
     duration: "10.2022—Present",
     icon: Palette,
     responsibilities: [
-      "Ensure UI/UX consistency and high-quality standards using React,Typescript and bootstrap.",
-      "Transitioning legacy codebase to modern React practices and optimize performance.",
-      "Define and establish a cohesive UI style for the company.",
+      "Designed and developed a trading bot using KivyMD, a cross-platform framework for building touch-enabled graphical applications in Python.",
+      "Designed an interactive dashboard using KivyMD components to allow users to select, configure, and monitor trading strategies.",
+      "The application was created to automate trading on the IQ Option platform, executing trades based on proprietary strategies. It supports 20 self-developed and backtested trading strategies for analysis and execution.",
+      "The system is currently in beta version and is intended for personal use only.",
     ],
-    skills: ["React", "TypeScript", "Bootstrap", "SQL Server"],
-    imageUrl: fms,
+    skills: ["KivyMD", "python", "IQ Option API", "SQLite"],
+    imageUrl: axleBot,
     link: "https://github.com/james3288/frontend-fms",
   },
   {
@@ -318,7 +319,7 @@ export function ProfessionalTimeline({
         return next;
       });
     },
-    [expandMode]
+    [expandMode],
   );
 
   return (
