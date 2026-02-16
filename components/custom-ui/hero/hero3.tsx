@@ -35,7 +35,9 @@ const Hero3: React.FC = () => {
 
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight">
-              <span className="text-gray-600 dark:text-gray-400">I`m King</span>
+              <span className="text-gray-600 dark:text-violet-400 dark:font-sans">
+                I`m King James
+              </span>
             </h1>
             <TrueFocus
               sentence="Software Developer"

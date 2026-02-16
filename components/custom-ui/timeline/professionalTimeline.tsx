@@ -147,7 +147,7 @@ const timelineData: TimelineItemData[] = [
   {
     id: "timeline-item-2",
     title: "Axle IQ Binary Option Bot",
-    type: "Full-time",
+    type: "Personal Used",
     duration: "10.2022—Present",
     icon: Palette,
     responsibilities: [
@@ -158,7 +158,7 @@ const timelineData: TimelineItemData[] = [
     ],
     skills: ["KivyMD", "python", "IQ Option API", "SQLite"],
     imageUrl: axleBot,
-    link: "https://github.com/james3288/frontend-fms",
+    link: "https://github.com/james3288/Axle-Bot",
   },
   {
     id: "timeline-item-3",
