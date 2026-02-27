@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import FloatingLines from "@/components/floating-line/FloatingLines";
+import SlideInText from "@/components/custom-ui/slideInText/slideInText";
 import TrueFocus from "../true-focus/TrueFocus";
 import ChromaGrid from "../chroma/ChromaGrid";
 import FancyButton from "../modern-buttons/fancyButton/fancyButton";
@@ -47,14 +48,7 @@ const Hero3: React.FC = () => {
               animationDuration={0.5}
               pauseBetweenAnimations={1}
             />
-
-            <p
-              className={`mt-6 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto`}
-            >
-              I’m a software developer with a strong foundation in enterprise
-              systems, now focused on building modern web applications using
-              Django and React to deliver reliable, high-quality products.
-            </p>
+            <SlideInText />
 
             <div className="flex justify-center gap-2.5 my-5">
               <Link href={"https://wakatime.com/@james3288"}>
