@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import FloatingLines from "@/components/floating-line/FloatingLines";
 import SlideInText from "@/components/custom-ui/slideInText/slideInText";
 import TrueFocus from "../true-focus/TrueFocus";
@@ -7,70 +7,82 @@ import ChromaGrid from "../chroma/ChromaGrid";
 import FancyButton from "../modern-buttons/fancyButton/fancyButton";
 import { VerifyBadge } from "../verify-budge/VerifyBadge";
 import Link from "next/link";
+import FormModalView from "../formModals/formModal";
 
 const Hero3: React.FC = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
-    <section
-      className="w-full relative min-h-screen py-[50px] md:py-[10px] lg:py-0"
-      id="about"
-    >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <FloatingLines
-          enabledWaves={["top", "middle", "bottom"]}
-          // Array - specify line count per wave; Number - same count for all waves
-          lineCount={[1, 3, 1]}
-          // Array - specify line distance per wave; Number - same distance for all waves
-          lineDistance={[8, 6, 4]}
-          bendRadius={1.0}
-          bendStrength={-0.5}
-          interactive={true}
-          parallax={true}
-        />
-        <div className="absolute bottom-0 bg-gradient-to-t from-[#0A0A0A] to-[#150E16]/5 w-full h-[50px]"></div>
-      </div>
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="lg:py-32 flex flex-col items-center justify-center md:flex-row">
-          <div className="flex-1">
-            <ChromaGrid />
-          </div>
-
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight">
-              <span className="text-gray-600 dark:text-violet-400 dark:font-sans">
-                I`m King James
-              </span>
-            </h1>
-            <TrueFocus
-              sentence="Software Developer"
-              manualMode={false}
-              blurAmount={3}
-              borderColor="red"
-              animationDuration={0.5}
-              pauseBetweenAnimations={1}
-            />
-            <SlideInText />
-
-            <div className="flex justify-center gap-2.5 my-5">
-              <Link href={"https://wakatime.com/@james3288"}>
-                <VerifyBadge type="wakatime" size="md" />
-              </Link>
-              <Link href={"https://github.com/james3288"} target="blank">
-                <VerifyBadge type="github" size="md" />
-              </Link>
-              <Link href={"https://app.daily.dev/james3288"}>
-                {" "}
-                <VerifyBadge type="dailyDev" size="md" />
-              </Link>
+    <>
+      <section
+        className="w-full relative min-h-screen py-[50px] md:py-[10px] lg:py-0"
+        id="about"
+      >
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <FloatingLines
+            enabledWaves={["top", "middle", "bottom"]}
+            // Array - specify line count per wave; Number - same count for all waves
+            lineCount={[1, 3, 1]}
+            // Array - specify line distance per wave; Number - same distance for all waves
+            lineDistance={[8, 6, 4]}
+            bendRadius={1.0}
+            bendStrength={-0.5}
+            interactive={true}
+            parallax={true}
+          />
+          <div className="absolute bottom-0 bg-gradient-to-t from-[#0A0A0A] to-[#150E16]/5 w-full h-[50px]"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="lg:py-32 flex flex-col items-center justify-center md:flex-row">
+            <div className="flex-1">
+              <ChromaGrid />
             </div>
 
-            <div className="mt-8 flex items-center justify-center space-x-4">
-              {/* <ShimmerButton /> */}
-              <FancyButton label="Open for hire" />
+            <div className="text-center">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight">
+                <span className="text-gray-600 dark:text-violet-400 dark:font-sans">
+                  I`m King James
+                </span>
+              </h1>
+              <TrueFocus
+                sentence="Software Developer"
+                manualMode={false}
+                blurAmount={3}
+                borderColor="red"
+                animationDuration={0.5}
+                pauseBetweenAnimations={1}
+              />
+              <SlideInText />
+
+              <div className="flex justify-center gap-2.5 my-5">
+                <Link href={"https://wakatime.com/@james3288"}>
+                  <VerifyBadge type="wakatime" size="md" />
+                </Link>
+                <Link href={"https://github.com/james3288"} target="blank">
+                  <VerifyBadge type="github" size="md" />
+                </Link>
+                <Link href={"https://app.daily.dev/james3288"}>
+                  {" "}
+                  <VerifyBadge type="dailyDev" size="md" />
+                </Link>
+              </div>
+
+              <div className="mt-8 flex items-center justify-center space-x-4">
+                {/* <ShimmerButton /> */}
+                <FancyButton
+                  label="Open for hire"
+                  setIsContactOpen={setIsContactOpen}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <FormModalView
+        isContactOpen={isContactOpen}
+        setIsContactOpen={setIsContactOpen}
+      />
+    </>
   );
 };
 
